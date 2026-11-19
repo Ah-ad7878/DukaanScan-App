@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "506375157300",
+    "project_id": "dukan-scan-2a46b",
+    "storage_bucket": "dukan-scan-2a46b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506375157300:android:a65f9c3d3a12a66d977c61",
+        "android_client_info": {
+          "package_name": "com.example.dukan_scan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO_eEcDoddu1HmTxaUwI5n3H4X1Ct9IIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
