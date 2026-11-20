@@ -79,7 +79,6 @@ class SplashScreen extends StatelessWidget {
                 ],
               ),
             ),
-
             Expanded(
               child: PageView.builder(
                 controller: provider.pageController,
@@ -87,87 +86,99 @@ class SplashScreen extends StatelessWidget {
                 onPageChanged: provider.onPageChanged,
                 itemBuilder: (context, index) {
                   final item = provider.onboardingData[index];
-                  return Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: ScreenResponsive.getValue(
+
+                  return LayoutBuilder(
+                    builder: (context, constraints) {
+                      final double circleSize = ScreenResponsive.getValue(
                         context,
-                        mobile: 28.w,
-                        tablet: 60.w,
-                      ),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: ScreenResponsive.getValue(
-                            context,
-                            mobile: 250.w,
-                            tablet: 320.w,
+                        mobile: 240.w,
+                        tablet: (constraints.maxHeight * 0.45).clamp(
+                          200.0,
+                          280.0,
+                        ),
+                      );
+
+                      return SingleChildScrollView(
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            minHeight: constraints.maxHeight,
                           ),
-                          height: ScreenResponsive.getValue(
-                            context,
-                            mobile: 250.w,
-                            tablet: 320.w,
-                          ),
-                          padding: EdgeInsets.all(20.w),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                color: const Color(0xFF0C7A43)
-                                    .withValues(alpha: 0.08),
-                                blurRadius: 24,
-                                offset: const Offset(0, 10),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: ScreenResponsive.getValue(
+                                context,
+                                mobile: 28.w,
+                                tablet: 60.w,
                               ),
-                            ],
-                          ),
-                          child: Lottie.asset(
-                            item['animation']!,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                        SizedBox(
-                          height: ScreenResponsive.getValue(
-                            context,
-                            mobile: 36.h,
-                            tablet: 44.h,
-                          ),
-                        ),
-                        Text(
-                          item['title']!,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: ScreenResponsive.getValue(
-                              context,
-                              mobile: 24.sp,
-                              tablet: 30.sp,
                             ),
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xFF1E293B),
-                          ),
-                        ),
-                        SizedBox(height: 12.h),
-                        Text(
-                          item['subtitle']!,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: ScreenResponsive.getValue(
-                              context,
-                              mobile: 14.sp,
-                              tablet: 18.sp,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: circleSize,
+                                  height: circleSize,
+                                  padding: EdgeInsets.all(20.r),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    shape: BoxShape.circle,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: const Color(0xFF0C7A43)
+                                            .withValues(alpha: 0.08),
+                                        blurRadius: 24,
+                                        offset: const Offset(0, 10),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Lottie.asset(
+                                    item['animation']!,
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: ScreenResponsive.getValue(
+                                    context,
+                                    mobile: 32.h,
+                                    tablet: 28.h,
+                                  ),
+                                ),
+                                Text(
+                                  item['title']!,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: ScreenResponsive.getValue(
+                                      context,
+                                      mobile: 24.sp,
+                                      tablet: 28.sp,
+                                    ),
+                                    fontWeight: FontWeight.bold,
+                                    color: const Color(0xFF1E293B),
+                                  ),
+                                ),
+                                SizedBox(height: 12.h),
+                                Text(
+                                  item['subtitle']!,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: ScreenResponsive.getValue(
+                                      context,
+                                      mobile: 14.sp,
+                                      tablet: 17.sp,
+                                    ),
+                                    color: const Color(0xFF64748B),
+                                    height: 1.5,
+                                  ),
+                                ),
+                              ],
                             ),
-                            color: const Color(0xFF64748B),
-                            height: 1.5,
                           ),
                         ),
-                      ],
-                    ),
+                      );
+                    },
                   );
                 },
               ),
             ),
-
             Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: ScreenResponsive.getValue(
@@ -177,8 +188,8 @@ class SplashScreen extends StatelessWidget {
                 ),
                 vertical: ScreenResponsive.getValue(
                   context,
-                  mobile: 28.h,
-                  tablet: 36.h,
+                  mobile: 24.h,
+                  tablet: 28.h,
                 ),
               ),
               child: Row(
@@ -207,7 +218,7 @@ class SplashScreen extends StatelessWidget {
                     height: ScreenResponsive.getValue(
                       context,
                       mobile: 50.h,
-                      tablet: 58.h,
+                      tablet: 56.h,
                     ),
                     child: ElevatedButton(
                       onPressed: () => provider.nextPage(context),
