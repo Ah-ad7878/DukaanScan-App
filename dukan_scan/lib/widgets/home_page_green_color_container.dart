@@ -18,6 +18,14 @@ class HomePageGreenColorContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF0C7A43),
         borderRadius: BorderRadius.circular(22.r),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF1E293B).withValues(alpha: 0.1),
+            blurRadius: 16,
+            spreadRadius: 0,
+            offset: const Offset(6, 6),
+          ),
+        ],
       ),
 
       child: Column(

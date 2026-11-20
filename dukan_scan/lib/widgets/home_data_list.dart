@@ -15,6 +15,14 @@ class HomeDataList extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16.r),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF1E293B).withValues(alpha: 0.1),
+            blurRadius: 16,
+            spreadRadius: 0,
+            offset: const Offset(8, 8),
+          ),
+        ],
       ),
 
       child: Column(

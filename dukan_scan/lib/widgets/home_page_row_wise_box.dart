@@ -24,6 +24,14 @@ class HomePageRowWiseBox extends StatelessWidget {
               decoration: BoxDecoration(
                 color: const Color(0xFFE5A922),
                 borderRadius: BorderRadius.circular(20.r),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFF1E293B).withValues(alpha: 0.1),
+                    blurRadius: 16,
+                    spreadRadius: 0,
+                    offset: const Offset(6, 6),
+                  ),
+                ],
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,6 +82,14 @@ class HomePageRowWiseBox extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20.r),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFF1E293B).withValues(alpha: 0.1),
+                    blurRadius: 16,
+                    spreadRadius: 0,
+                    offset: const Offset(6, 6),
+                  ),
+                ],
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
