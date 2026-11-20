@@ -1,5 +1,4 @@
 import 'package:dukan_scan/providers/product_page_provider.dart';
-import 'package:dukan_scan/providers/product_provider.dart';
 import 'package:dukan_scan/responsive/screen_responsive.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -40,6 +40,16 @@ class _ProductScreenState extends State<ProductScreen> {
                   bottomRight: Radius.circular(24.r),
                 ),
               ),
+
+              child: Center(
+                child: SizedBox(
+                  width: isTablet ? 520.w : double.infinity,
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [],
+                  ),
+                ),
+              ),
             ),
           ],
         ),
