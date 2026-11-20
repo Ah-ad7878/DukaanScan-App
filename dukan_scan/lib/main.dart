@@ -2,6 +2,7 @@ import 'package:dukan_scan/firebase_options.dart';
 import 'package:dukan_scan/navigator/navigator_class.dart';
 import 'package:dukan_scan/providers/home_screen_provider.dart';
 import 'package:dukan_scan/providers/login_page_provider.dart';
+import 'package:dukan_scan/providers/product_page_provider.dart';
 import 'package:dukan_scan/providers/signup_screen_provider.dart';
 import 'package:dukan_scan/providers/splash_screen_provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -20,6 +21,7 @@ void main() async {
         ChangeNotifierProvider(create: (context) => SignupScreenProvider()),
         ChangeNotifierProvider(create: (context) => LoginPageProvider()),
         ChangeNotifierProvider(create: (context) => HomeScreenProvider()),
+        ChangeNotifierProvider(create: (context) => ProductProvider()),
       ],
       child: const NameBar(),
     ),
