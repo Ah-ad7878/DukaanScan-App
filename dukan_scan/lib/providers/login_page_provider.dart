@@ -45,7 +45,11 @@ class LoginPageProvider extends ChangeNotifier {
 
       if (context.mounted) {
         showMessage('Login Kamyab', context);
-        Navigator.pushNamed(context, NavigatorClass.homeScreenRouteName);
+        Navigator.pushNamedAndRemoveUntil(
+          context,
+          NavigatorClass.homeScreenRouteName,
+          (route) => false,
+        );
         return;
       }
     } on FirebaseAuthException catch (e) {

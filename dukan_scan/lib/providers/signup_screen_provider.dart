@@ -95,9 +95,10 @@ class SignupScreenProvider extends ChangeNotifier {
       //after account created
       if (context.mounted) {
         _showMessage(context, 'Account created successfully!');
-        Navigator.pushReplacementNamed(
+        Navigator.pushNamedAndRemoveUntil(
           context,
           NavigatorClass.homeScreenRouteName,
+          (route) => false,
         );
       }
     } on FirebaseAuthException catch (e) {
